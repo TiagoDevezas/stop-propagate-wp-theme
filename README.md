@@ -20,4 +20,4 @@ npm run watch
 npm run build
 ```
 
-That's it!.
+That's it!

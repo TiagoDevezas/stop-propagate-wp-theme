@@ -136,44 +136,6 @@ function stop_propaghate_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'stop_propaghate_theme_scripts' );
 
-function add_class_to_menu_li($classes, $item, $args) {
-  if($args->theme_location == 'menu-sph') {
-    $classes[] = 'dib link';
-  }
-  return $classes;
-}
-add_filter( 'nav_menu_css_class', 'add_class_to_menu_li', 1, 3 );
-
-function add_class_to_menu_li_a($attrs, $item, $args) {
-	$class = 'f4 fw7 dib pa2 no-underline bg-animate bg-white hover-bg-dark-red black hover-white ml2';
-	$attrs['class'] = $class;
-	return $attrs;
-}
-
-add_filter( 'nav_menu_link_attributes', 'add_class_to_menu_li_a', 1, 3 );
-
-
-function create_custom_posts_types() {
-	register_post_type( 'team-member',
-	  array(
-	    'labels' => array(
-	      'name' => __( 'Team Member' ),
-	      'add_new_item' => 'Add New Team Member'
-	    ),
-	    'public' => true,
-	    'has_archive' => false,
-	    'supports' => array(
-	    	'title',
-	    	'editor',
-	    	'thumbnail',
-	    	'custom-fields'
-	    )
-	  )
-	);
-}
-
-add_action( 'init', 'create_custom_posts_types' );
-
 // function add_tagline_title ( $post_id ) {
 //     global $wpdb;
 //     if ( get_post_type( $post_id ) == 'tagline' ) {

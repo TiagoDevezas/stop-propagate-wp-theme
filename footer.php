@@ -13,9 +13,9 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer bg-near-white bt b--light-gray">
-		<div class="site-info center mw8 pv5 flex items-start mid-gray">
-			<img src="<?php echo get_template_directory_uri() . '/images/sph_logo.svg' ?>" class="h2 mr6" alt="Stop PropagHate"></img>
+	<footer id="colophon" class="site-footer bg-white bt b--light-gray">
+		<div class="site-info center mw8 pv5 flex items-center mid-gray">
+			<img src="<?php echo get_template_directory_uri() . '/images/sph_logo.svg' ?>" class="h3 mr6" alt="Stop PropagHate"></img>
 			<div class="legal" style="flex-grow: 1;">
 				<p class="mt0 f5 lh-copy avenir fw5 ttu tracked">
 					PARTNERS

@@ -19,18 +19,18 @@ get_header();
 		<main id="main" class="site-main">
 
 			<div class="tagline bg-black">			
-				<div class="tc f1-ns f2 lh-title b pv6 ph4 center mw8 white">
+				<div class="tc f1-ns f2 lh-title b pt6 pb7 ph4 center mw8 white">
 					Stop Propag<span class="dark-red">Hate</span> uses artificial intelligence to help detect and reduce <span class="dark-red">hate</span> speech in online news media.
 				</div>
 			</div>
 
-			<div class="form-sph" style="margin-top: -100px;">
+			<div class="form-sph" style="margin-top: -200px;">
 				<?php
 					get_template_part('template-parts/sph-form');
 				?>
 			</div>
 
-			<div class="mw8 center" id="team-members">
+			<!-- <div class="mw8 center" id="team-members"> -->
 
 			<?php /*
 
@@ -46,6 +46,8 @@ get_header();
 
 			</div><!-- team-members -->
 
+			*/ ?>
+
 			<?php
 				$about_page = get_page_by_path('about', OBJECT, 'page');
 				$content = apply_filters('the_content', $about_page->post_content); 
@@ -53,7 +55,7 @@ get_header();
 					?>
 					<div id="about-section" class="bg-near-white">
 						<div class="center mw8 pv4 ph2">
-							<h2 class="f2 mt0 tc" id="about"><?= get_the_title($about_page) ?></h2>
+							<h2 class="f2 mt0 tc" id="about"><?# get_the_title($about_page) ?></h2>
 							<div class="f2-ns f3 tc fw4 ph4 dark-gray lh-copy measure center"><?php echo $content ?></div>
 						</div>
 					</div>
@@ -61,7 +63,7 @@ get_header();
 				}
 			?>
 
-			<?php
+			<?php /*
 				$contact_page = get_page_by_path('contact', OBJECT, 'page');
 				$content = apply_filters('the_content', $contact_page->post_content); 
 				if ($contact_page) {

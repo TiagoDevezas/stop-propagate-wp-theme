@@ -30,23 +30,6 @@ get_header();
 				?>
 			</div>
 
-			<!-- <div class="mw8 center" id="team-members"> -->
-
-			<?php /*
-
-				if ( ! is_active_sidebar( 'team-1' ) ) {
-					return;
-				}
-				?>
-
-				<h2 class="tc f2" id="team">Team</h2>
-				<aside id="secondary" class="widget-area flex tc flex-wrap">
-					<?php dynamic_sidebar( 'team-1' ); ?>
-				</aside><!-- #secondary -->
-
-			</div><!-- team-members -->
-
-			*/ ?>
 
 			<?php
 				$about_page = get_page_by_path('about', OBJECT, 'page');
@@ -62,6 +45,22 @@ get_header();
 			<?php
 				}
 			?>
+
+			<?php /*
+
+				if ( ! is_active_sidebar( 'team-1' ) ) {
+					return;
+				}
+				?>
+
+			<div class="mw8 center" id="team-members">
+
+				<h2 class="tc f2" id="team">Team</h2>
+				<aside id="secondary" class="widget-area flex tc flex-wrap">
+					<?php dynamic_sidebar( 'team-1' ); ?>
+				</aside><!-- #secondary -->
+
+			</div><!-- team-members -->
 
 			<?php /*
 				$contact_page = get_page_by_path('contact', OBJECT, 'page');

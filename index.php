@@ -38,7 +38,7 @@ get_header();
 					?>
 					<div id="about-section" class="bg-near-white">
 						<div class="center mw8 pv4 ph2">
-							<h2 class="f2 mt0 tc" id="about"><?# get_the_title($about_page) ?></h2>
+							<h2 class="f2 mt0 tc" id="about"><?# get_the_title($about_page) ?>Why?</h2>
 							<div class="f2-ns f3 tc fw4 ph4 dark-gray lh-copy measure center"><?php echo $content ?></div>
 						</div>
 					</div>

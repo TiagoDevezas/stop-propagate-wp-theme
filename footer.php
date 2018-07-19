@@ -17,19 +17,14 @@
 		<div class="site-info center mw8 pv5 flex items-start mid-gray">
 			<img src="<?php echo get_template_directory_uri() . '/images/sph_logo.svg' ?>" class="h2 mr6" alt="Stop PropagHate"></img>
 			<div class="legal" style="flex-grow: 1;">
-				<p class="mt0 f6 lh-copy avenir">
-					INESC TEC</br>
-					Rua Dr. Roberto Frias</br>
-					4200-465 Porto</br>
-					Portugal
+				<p class="mt0 f5 lh-copy avenir fw5 ttu tracked">
+					PARTNERS
 				</p>
-				<p class="f6 lh-copy avenir">email@domain.pt</p>
-			</div>
-			<div class="social-links">
-				<ul class="list ma0">
-					<li class="dib"><a href="#" class="link near-black hover-dark-red">Twitter</a></li>
-					<li class="dib ml4"><a href="#" class="link near-black hover-dark-red">Facebook</a></li>
-				</ul>
+				<div class="flex flex-wrap justify-between">
+					<img src="<?php echo get_template_directory_uri() . '/images/google-dni-logo.png' ?>" class="h3" alt="Stop PropagHate"></img>
+					<img src="<?php echo get_template_directory_uri() . '/images/inesctec_logo.png' ?>" class="h3" alt="Stop PropagHate"></img>
+					<img src="<?php echo get_template_directory_uri() . '/images/feup_logo.png' ?>" class="h3" alt="Stop PropagHate"></img>
+				</div>
 			</div>
 
 			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'stop-propaghate-theme' ) ); ?>"> -->

@@ -5,3 +5,5 @@ require('./add-classes.js');
 
 import 'tachyons/css/tachyons.min.css';
 import '../style.css';
+
+require('./vue-form-component.js');

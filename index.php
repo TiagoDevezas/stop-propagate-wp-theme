@@ -24,9 +24,15 @@ get_header();
 				</div>
 			</div>
 
+			<div class="form-sph" style="margin-top: -100px;">
+				<?php
+					get_template_part('template-parts/sph-form');
+				?>
+			</div>
+
 			<div class="mw8 center" id="team-members">
 
-			<?php
+			<?php /*
 
 				if ( ! is_active_sidebar( 'team-1' ) ) {
 					return;
@@ -118,6 +124,7 @@ get_header();
 			endif;
 			*/ ?>
 
+			
 		
 		</main><!-- #main -->
 	</div><!-- #primary -->

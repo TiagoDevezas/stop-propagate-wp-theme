@@ -10,7 +10,15 @@ var sphForm = new Vue({
       language: 'en',
       speechType: 'hate',
       apiResponse: '',
-      apiURL: 'http://vps.tiagodevezas.pt/sph/sph'
+      apiURL: 'http://vps.tiagodevezas.pt/sph/sph',
+      messageEmpty: true
+    }
+  },
+  watch: {
+    stringToParse: function(val, oldVal) {
+      if (!val.length) {
+        this.messageEmpty = true
+      }
     }
   },
   methods: {
@@ -19,8 +27,9 @@ var sphForm = new Vue({
       this.loading = true
       let stringUrlParam = { string: this.stringToParse, hate: this.speechType, language: this.language }
       axios.post(this.apiURL, stringUrlParam).then((response) => {
+        this.messageEmpty = false
         this.loading = false
-        this.apiResponse = response.data
+        this.apiResponse = response.data[0]
       })
     }
   }

@@ -18,7 +18,7 @@ module.exports = {
       // port: 4000,
       logLevel: 'silent',
       files: ['./*.php'],
-      proxy: 'http://localhost/wordpress',
+      proxy: 'http://localhost/sph-wordpress',
     })
   ],
   module: {

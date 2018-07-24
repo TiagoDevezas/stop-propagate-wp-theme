@@ -10,7 +10,7 @@ var sphForm = new Vue({
       language: 'en',
       speechType: 'hate',
       apiResponse: '',
-      apiURL: 'http://vps.tiagodevezas.pt/sph/sph',
+      apiURL: 'http://stop-propaghate-api.inesctec.pt/sph',
       messageEmpty: true
     }
   },
@@ -23,9 +23,10 @@ var sphForm = new Vue({
   },
   methods: {
     parseString () {
+      this.messageEmpty = true
       this.apiResponse = ''
       this.loading = true
-      let stringUrlParam = { string: this.stringToParse, hate: this.speechType, language: this.language }
+      let stringUrlParam = { text: this.stringToParse, hate_type: this.speechType, language: this.language }
       axios.post(this.apiURL, stringUrlParam).then((response) => {
         this.messageEmpty = false
         this.loading = false

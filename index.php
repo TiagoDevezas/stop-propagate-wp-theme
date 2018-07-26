@@ -15,52 +15,80 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-			<div class="tagline bg-black">			
-				<div class="tc f1-ns f2 lh-title b pt6 pb7 ph4 center mw8 white">
-					Stop Propag<span class="dark-red">Hate</span> uses artificial intelligence to help detect and reduce <span class="dark-red">hate</span> speech in online news media.
+
+		<!-- Project tagline -->
+		<div class="tagline bg-black">			
+			<div class="tc f1-ns f2 lh-title b pt6 pb7 ph4 center mw8 white">
+				Stop Propag<span class="dark-red">Hate</span> uses artificial intelligence to help detect and reduce <span class="dark-red">hate</span> speech in online news media.
+			</div>
+		</div>
+
+		<!-- API form -->
+		<div class="form-sph" style="margin-top: -200px;" id="try-it">
+			<?php
+			get_template_part('template-parts/sph-form');
+			?>
+		</div>
+
+		<!-- About/Why section ** needs an /about page to get the content ** -->
+		<?php
+		$about_page = get_page_by_path('about', OBJECT, 'page');
+		$content = apply_filters('the_content', $about_page->post_content); 
+		if ($about_page) {
+			?>
+			<div id="about-section" class="bg-near-white">
+				<div class="center mw8 pv4 ph2">
+					<h2 class="f2 mt0 tc" id="why"><?# get_the_title($about_page) ?>Why?</h2>
+					<div class="f2-ns f3 tc fw4 ph4 dark-gray lh-copy measure center"><?php echo $content ?></div>
 				</div>
 			</div>
-
-			<div class="form-sph" style="margin-top: -200px;" id="try-it">
-				<?php
-					get_template_part('template-parts/sph-form');
-				?>
-			</div>
-
-
 			<?php
-				$about_page = get_page_by_path('about', OBJECT, 'page');
-				$content = apply_filters('the_content', $about_page->post_content); 
-				if ($about_page) {
-					?>
-					<div id="about-section" class="bg-near-white">
-						<div class="center mw8 pv4 ph2">
-							<h2 class="f2 mt0 tc" id="why"><?# get_the_title($about_page) ?>Why?</h2>
-							<div class="f2-ns f3 tc fw4 ph4 dark-gray lh-copy measure center"><?php echo $content ?></div>
+		}
+		?>
+
+		<!-- Opportunities section -->
+		<?php 
+		$args = array( 'category__and' => array(get_cat_ID("opportunities"), get_cat_ID("active")), 'post_type' =>  'post' ); 
+		$catPost = get_posts($args);
+		if (!empty($catPost)) { ?>
+			<div class="center mw8 pv4 ph2">
+				<h2 class="f2 mt0 tc" id="opportunities">Opportunities</h2>
+				<div class="opportunities-wrapper center">
+					<?php foreach ($catPost as $post) : setup_postdata($post); ?>
+						<div class="flex justify-center pv3">
+							<h2 class="mv0 pv2 ph3"><a href="<?php the_permalink(); ?>" class="f3 fw6 db dark-red link hover-black"><?php the_title(); ?></a></h2> 
+							<p><?# the_content(); ?></p>
 						</div>
-					</div>
-			<?php
-				}
+					<?php  endforeach; ?>
+					<?php
+				} ?>
+			</div>
+		</div>
+
+
+		<!-- Team widget section -->
+		<?php
+
+		if ( is_active_sidebar( 'team-1' ) ) {
+
 			?>
+			<div class="team-wrapper bg-near-white">
+				<div class="mw8 center pv4 ph2" id="team-members">
 
-			<?php /*
+					<h2 class="tc f2 mt0" id="team">Team</h2>
+					<aside id="secondary" class="widget-area flex tc flex-wrap">
+						<?php dynamic_sidebar( 'team-1' ); ?>
+					</aside><!-- #secondary -->
 
-				if ( ! is_active_sidebar( 'team-1' ) ) {
-					return;
-				}
-				?>
+				</div><!-- #team-members -->
+			</div> <!-- .team-wrapper -->
+		<?php } ?>
 
-			<div class="mw8 center" id="team-members">
 
-				<h2 class="tc f2" id="team">Team</h2>
-				<aside id="secondary" class="widget-area flex tc flex-wrap">
-					<?php dynamic_sidebar( 'team-1' ); ?>
-				</aside><!-- #secondary -->
 
-			</div><!-- team-members -->
 
 			<?php /*
 				$contact_page = get_page_by_path('contact', OBJECT, 'page');
@@ -126,10 +154,10 @@ get_header();
 			*/ ?>
 
 			
-		
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+	<?php
+	get_sidebar();
+	get_footer();

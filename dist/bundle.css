@@ -7,3 +7,28 @@
 	top: 0;
 	width: 100%
 }
+
+.type-post a {
+    text-decoration: none;
+    transition: color .15s ease-in;
+    color: #e7040f;
+}
+
+.type-post a:link, .type-post a:visited {
+    transition: color .15s ease-in;
+}
+
+.type-post a:hover {
+    transition: color .15s ease-in;
+    color: #000000;
+}
+
+.type-post a:active {
+    transition: color .15s ease-in;
+}
+
+.type-post a:focus {
+    transition: color .15s ease-in;
+    outline: 1px dotted currentColor;
+    color: #000000;
+}

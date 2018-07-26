@@ -8,12 +8,12 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class("center mw8 ph3"); ?>>
+<div class="post-wrapper bg-near-white">
+<article id="post-<?php the_ID(); ?>" <?php post_class("center mw8 ph3 pv4"); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="entry-title mt0">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -22,8 +22,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				stop_propaghate_theme_posted_on();
-				stop_propaghate_theme_posted_by();
+				// stop_propaghate_theme_posted_on();
+				// stop_propaghate_theme_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -31,7 +31,7 @@
 
 	<?php stop_propaghate_theme_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content measure-wide lh-copy">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -54,6 +54,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php stop_propaghate_theme_entry_footer(); ?>
+		<?# stop_propaghate_theme_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+</div> <!-- .post-wrapper -->

@@ -8,10 +8,10 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class("center mw8 ph3"); ?>>
+<div class="page-wrapper bg-near-white">
+<article id="post-<?php the_ID(); ?>" <?php post_class("center mw8 ph3 pv4"); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title mt0">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php stop_propaghate_theme_post_thumbnail(); ?>
@@ -50,3 +50,4 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+</div> <!-- .page-wrapper -->

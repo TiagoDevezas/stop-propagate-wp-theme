@@ -82,7 +82,7 @@ get_header();
 					<aside id="secondary" class="widget-area flex tc flex-wrap">
 						<?php dynamic_sidebar( 'team-1' ); ?>
 					</aside><!-- #secondary -->
-
+					<div class="tc pt4"><a href="http://stop-propaghate.inesctec.pt/index.php/former-team-members/" class="f4 fw6 db dark-red link hover-black">Former Members</a></div>
 				</div><!-- #team-members -->
 			</div> <!-- .team-wrapper -->
 		<?php } ?>

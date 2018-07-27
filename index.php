@@ -70,24 +70,39 @@ get_header();
 
 
 		<!-- Team widget section -->
+		<div class="team-wrapper bg-near-white">
 		<?php
 
 		if ( is_active_sidebar( 'team-1' ) ) {
 
 			?>
-			<div class="team-wrapper bg-near-white">
-				<div class="mw8 center pv4 ph2" id="team-members">
-
+				<div class="mw8 center pt4 ph2" id="team-members-active">
 					<h2 class="tc f2 mt0" id="team">Team</h2>
-					<aside id="secondary" class="widget-area flex tc flex-wrap">
+					<h3 class="tc f3 mv0 dark-gray">Current</h3>
+					<hr class="mw3 bb bw1 b--black-10">
+					<aside id="secondary-1" class="widget-area flex tc flex-wrap justify-around">
 						<?php dynamic_sidebar( 'team-1' ); ?>
 					</aside><!-- #secondary -->
-					<div class="tc pt4"><a href="http://stop-propaghate.inesctec.pt/index.php/former-team-members/" class="f4 fw6 db dark-red link hover-black">Former Members</a></div>
 				</div><!-- #team-members -->
-			</div> <!-- .team-wrapper -->
+			
 		<?php } ?>
 
+		<?php
 
+		if ( is_active_sidebar( 'team-2' ) ) {
+
+			?>
+				<div class="mw8 center pb4 ph2" id="team-members-inactive">
+					<h3 class="tc f3 mv0 dark-gray">Former</h3>
+					<hr class="mw3 bb bw1 b--black-10">
+					<aside id="secondary-2" class="widget-area flex tc flex-wrap justify-around">
+						<?php dynamic_sidebar( 'team-2' ); ?>
+					</aside><!-- #secondary -->
+				</div><!-- #team-members -->
+			
+		<?php } ?>
+
+		</div> <!-- .team-wrapper -->
 
 
 			<?php /*
